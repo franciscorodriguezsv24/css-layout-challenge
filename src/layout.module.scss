@@ -1,0 +1,18 @@
+@use "./styles/global" as *;
+
+* {
+  margin: 0px;
+}
+
+.container {
+  background-color: var(--primary-card);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: max(180px) 3fr max(250px);
+  gap: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.mainContent {
+  background-color: var(--primary-background);
+}
