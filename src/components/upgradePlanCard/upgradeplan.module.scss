@@ -1,0 +1,43 @@
+@use "../../styles/global" as *;
+
+.upgradePlanContainer {
+  width: 100%;
+  background: var(--primary-card);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 15px 0px;
+}
+
+.rainbowContainer {
+  background: $gradient-color;
+  width: 70%;
+  height: 73px;
+  border-radius: 11px;
+}
+
+.upgradePlanContainer h4 {
+  color: var(--primary-text);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.upgradePlanContainer p {
+  color: var(--second-text);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.upgradePlanContainer button {
+  width: 70%;
+  height: 35px;
+  background: $orange;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: none;
+}

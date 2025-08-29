@@ -1,0 +1,97 @@
+@use "../../styles/global" as *;
+
+.shareContainer {
+  width: 100%;
+  height: 79px;
+  background: var(--primary-card);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-radius: 12px;
+  box-shadow: $card-shadow;
+  justify-content: center;
+  padding-left: 15px;
+
+  @media (min-width: 450px) {
+    width: 190px;
+  }
+
+  @media (min-width: 880px) {
+    width: 159px;
+  }
+}
+
+.shareText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: 550px) {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-right: 0px;
+    gap: 0.2rem;
+  }
+}
+
+.shareText h4 {
+  color: var(--primary-text);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.shareText p {
+  color: var(--second-text);
+  font-weight: 400;
+  font-size: 8px;
+}
+
+.circleGreen {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $green;
+  background: var(--primary-card);
+}
+
+.circleRed {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $red;
+  left: 12px;
+  bottom: -1px;
+  background: var(--primary-card);
+}
+.circleOrange {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $orange;
+  left: 12px;
+  bottom: -1px;
+  background: var(--primary-card);
+}
+
+.shareIcons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.circlesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 450px) {
+    justify-content: start;
+  }
+}

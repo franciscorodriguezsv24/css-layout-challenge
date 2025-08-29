@@ -1,0 +1,213 @@
+@use "../../styles/global" as *;
+
+.sidebarContainer {
+  background-color: var(--secondary-background);
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+
+  @media (min-width: 880px) {
+    display: flex;
+  }
+}
+
+.responsiveContainer {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: var(--secondary-background);
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10002;
+  transition: 0.3s ease-in;
+}
+
+.xIconContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: white;
+
+  @media (min-width: 880px) {
+    justify-content: end;
+  }
+}
+
+.xIcon {
+  display: block;
+  @media (min-width: 880px) {
+    display: none;
+  }
+}
+.navigationContainer {
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (min-width: 880px) {
+    gap: 1rem;
+    height: 60%;
+  }
+}
+
+.actionsContainer {
+  height: 32%;
+  border-top: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  @media (min-width: 880px) {
+    padding-bottom: 25px;
+  }
+
+  @media (min-width) {
+    height: 40%;
+  }
+}
+
+.buttonNew {
+  background-color: $orange;
+  border: none;
+  width: 65%;
+  height: 35px;
+  border-radius: 7px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2px;
+  font-size: 11px;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.buttonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 5px;
+  border-radius: 7px;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonNew:hover .buttonIcon {
+  background-color: $third-orange;
+}
+
+.actionElements {
+  width: 65%;
+  padding-bottom: 25px;
+  display: none;
+}
+
+:has(.buttonNew:hover) .actionElements {
+  display: block;
+}
+
+.actionElements:hover {
+  display: block;
+}
+
+.navigationActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.elementsContainer {
+  background-color: $border;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 10px;
+  border-radius: 9px;
+}
+
+.elementsContainer button {
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  color: $text-actions;
+  width: 100%;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.elementsContainer button:hover {
+  background-color: $second-border;
+}
+
+.navigationHeader {
+  width: 45%;
+  height: 25px;
+  background: $gradient-color;
+  border-radius: 5px;
+  margin-left: 2rem;
+}
+
+.linkButton {
+  color: $gray;
+  text-decoration: none;
+  padding-left: 2rem;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  position: relative;
+}
+
+.linkButton:hover {
+  color: white;
+}
+
+.linkButton:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: $white;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.active {
+  text-decoration: none;
+  padding-left: 2rem;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  position: relative;
+
+  color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: $white;
+    border-radius: 0px 5px 5px 0px;
+  }
+}
+
+.darkModeButton {
+  background: transparent;
+  border: none;
+  color: white;
+}
