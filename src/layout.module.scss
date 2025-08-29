@@ -17,11 +17,16 @@
   background-color: var(--primary-card);
   height: 100vh;
   display: grid;
-  grid-template-columns: max(180px) 3fr max(290px);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+
   font-family: "Roboto", sans-serif;
+  @media (min-width: 880px) {
+    grid-template-columns: max(180px) 3fr;
+    gap: 2rem;
+  }
 }
 
 .mainContent {
   background-color: var(--primary-background);
+  overflow-y: scroll;
 }

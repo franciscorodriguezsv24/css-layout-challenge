@@ -1,37 +1,73 @@
-import {
-  Plus,
-  FileUp,
-  FolderUp,
-  FolderPlus,
-  Home,
-  Files,
-  FileClock,
-  SquareArrowOutUpRight,
-  CircleFadingArrowUp,
-  Trash,
-} from "lucide-react";
+import { Plus, FileUp, FolderUp, FolderPlus, X, Sun, Moon } from "lucide-react";
 import styles from "./sidebar.module.scss";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import { useEffect, useRef } from "react";
+import { useTheme } from "../../context/ThemeModeContext";
 
-type LinksData = {
-  link: string;
-  label: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+import { links } from "../../mock/SidebarMock";
+
+type SidebarProps = {
+  changeLayout: boolean;
+  setChangeLayout: React.Dispatch<React.SetStateAction<boolean>>;
+  actionSidebar: () => void;
 };
 
-export const SideBar = () => {
-  const links: LinksData[] = [
-    { link: "/", label: "Home", icon: Home },
-    { link: "#", label: "My Files", icon: Files },
-    { link: "#", label: "Recent Files", icon: FileClock },
-    { link: "#", label: "Shared Filed", icon: SquareArrowOutUpRight },
-    { link: "#", label: "File Request", icon: CircleFadingArrowUp },
-    { link: "#", label: "Trash", icon: Trash },
-  ];
+export const SideBar = ({
+  changeLayout,
+  setChangeLayout,
+  actionSidebar,
+}: SidebarProps) => {
+  const location = useLocation();
+
+  const { theme, toggleTheme } = useTheme();
+
+  const sidebarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        actionSidebar();
+      }
+    }
+
+    if (changeLayout) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [changeLayout, actionSidebar]);
+
+  const isActive = (path: string) => {
+    return path === location.pathname;
+  };
 
   return (
-    <aside className={styles.sidebarContainer}>
+    <aside
+      ref={sidebarRef}
+      className={
+        changeLayout ? styles.responsiveContainer : styles.sidebarContainer
+      }
+    >
       <div className={styles.navigationContainer}>
+        <div className={styles.xIconContainer}>
+          <button
+            className={styles.darkModeButton}
+            onClick={() => {
+              toggleTheme();
+              setChangeLayout(false);
+            }}
+          >
+            {theme == "light" ? <Moon /> : <Sun />}
+          </button>
+          <X onClick={actionSidebar} className={styles.xIcon} />
+        </div>
         <div className={styles.navigationHeader}></div>
         <div className={styles.navigationActions}>
           {links.map((link) => {
@@ -40,7 +76,10 @@ export const SideBar = () => {
               <Link
                 key={link.label}
                 to={link.link}
-                className={styles.linkButton}
+                className={
+                  isActive(link.link) ? styles.active : styles.linkButton
+                }
+                onClick={() => setChangeLayout(false)}
               >
                 <Icon size={13} /> {link.label}
               </Link>

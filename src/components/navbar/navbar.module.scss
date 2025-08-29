@@ -1,0 +1,43 @@
+.chartHeaderContainer {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--primary-icon);
+  border-bottom: 1px solid #e0e7f1;
+
+  @media (min-width: 880px) {
+    display: none;
+    height: 7%;
+  }
+}
+
+.chartContainerMenu {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 0.5rem;
+}
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chartIconContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.imgSidebar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 100% 20%;
+}

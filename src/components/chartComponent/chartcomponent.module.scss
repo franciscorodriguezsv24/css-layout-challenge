@@ -4,6 +4,14 @@
   width: 100%;
   height: auto;
   position: relative;
+
+  @media (min-width: 550px) {
+    width: 60%;
+  }
+
+  @media (min-width: 880px) {
+    width: 100%;
+  }
 }
 
 .graph {
