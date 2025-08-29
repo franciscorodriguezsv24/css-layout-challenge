@@ -8,12 +8,16 @@
 .chartHeaderContainer {
   width: 100%;
   height: 7%;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   color: var(--primary-icon);
   border-bottom: 1px solid #e0e7f1;
+
+  @media (min-width: 880px) {
+    display: flex;
+  }
 }
 
 .chartContainerMenu {
@@ -76,14 +80,27 @@
 }
 
 .resumeChartContainer > *:not(:last-child) {
-  border-bottom: 1px solid #e0e7f1; // o margin/padding extra
+  border-bottom: 1px solid #e0e7f1;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .upgradePlanContainer {
-  width: 70%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 2rem;
+
+  @media (min-width: 550px) {
+    width: 40%;
+  }
+
+  @media (min-width: 880px) {
+    width: 70%;
+  }
+
+  @media (min-width: 880px) {
+    padding-bottom: 0px;
+  }
 }

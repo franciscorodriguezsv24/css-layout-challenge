@@ -1,6 +1,19 @@
 @use "../../styles/global" as *;
 
+.pageContainer {
+  background-color: var(--primary-card);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 880px) {
+    grid-template-columns: 3fr max(290px);
+    gap: 2rem;
+  }
+}
+
 .homeContainer {
+  background-color: var(--primary-background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +23,7 @@
 
 .cardContainer {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: start;
   gap: 1.5rem;
   width: 100%;
@@ -80,7 +93,7 @@
 }
 .shareCardContainer {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: start;
   gap: 1.5rem;
   width: 100%;
