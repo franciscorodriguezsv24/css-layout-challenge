@@ -1,12 +1,15 @@
 .chartHeaderContainer {
+  position: fixed;
   width: 100%;
   height: 6vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  background: var(--primary-card);
   color: var(--primary-icon);
   border-bottom: 1px solid #e0e7f1;
+  z-index: 10001;
 
   @media (min-width: 880px) {
     display: none;

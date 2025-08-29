@@ -1,6 +1,7 @@
 @use "../../styles/global" as *;
 
 .pageContainer {
+  margin-top: 50px;
   background-color: var(--primary-card);
   height: 100vh;
   display: grid;
@@ -9,6 +10,7 @@
   @media (min-width: 880px) {
     grid-template-columns: 3fr max(290px);
     gap: 2rem;
+    margin-top: 0px;
   }
 }
 
