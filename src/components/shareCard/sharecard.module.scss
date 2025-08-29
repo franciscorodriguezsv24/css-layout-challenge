@@ -1,0 +1,72 @@
+@use "../../styles/global" as *;
+
+.shareContainer {
+  width: 157px;
+  height: 79px;
+  background: var(--primary-card);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-radius: 12px;
+  box-shadow: $card-shadow;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.shareText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.shareText h4 {
+  color: var(--primary-text);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.shareText p {
+  color: var(--second-text);
+  font-weight: 400;
+  font-size: 8px;
+}
+
+.circleGreen {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $green;
+  background: $white;
+}
+
+.circleRed {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $red;
+  left: 12px;
+  bottom: -1px;
+  background: $white;
+}
+.circleOrange {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $orange;
+  left: 12px;
+  bottom: -1px;
+  background: $white;
+}
+
+.shareIcons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.circlesContainer {
+  width: 100%;
+}
