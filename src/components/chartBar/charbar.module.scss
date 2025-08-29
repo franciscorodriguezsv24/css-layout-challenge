@@ -1,0 +1,89 @@
+@use "../../styles/global" as *;
+
+.rightBar {
+  background-color: var(--primary-background);
+  width: 100%;
+}
+
+.chartHeaderContainer {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-icon);
+  border-bottom: 1px solid #e0e7f1;
+}
+
+.chartContainerMenu {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chartIconContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.imgSidebar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 100% 20%;
+}
+
+.chartContainer {
+  width: 100%;
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.chartContainer h2 {
+  padding-top: 1rem;
+  width: 70%;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary-text);
+}
+
+.storageResult {
+  width: 100%;
+  text-align: center;
+  color: $gray;
+  font-size: 10px;
+}
+
+.resumeChartContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resumeChartContainer > *:not(:last-child) {
+  border-bottom: 1px solid #e0e7f1; // o margin/padding extra
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.upgradePlanContainer {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

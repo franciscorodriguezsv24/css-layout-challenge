@@ -1,0 +1,90 @@
+@use "../../styles/global" as *;
+
+.CardContainer {
+  background-color: var(--primary-card);
+  width: 159px;
+  height: 133px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 8px 16px;
+  box-shadow: $card-shadow;
+}
+
+.CardHeader {
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.threeDots {
+  color: var(--primary-icon);
+  width: 20px;
+}
+
+.iconsHeader {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.textContainer h3 {
+  font-size: 12px;
+  color: var(--primary-text);
+  font-weight: 400;
+}
+
+.textContainer p {
+  font-size: 8px;
+  color: var(--second-text);
+}
+
+.boxContianer {
+  position: relative;
+  width: 30px;
+  height: 26px;
+  background: $second-orange;
+}
+
+.boxContent {
+  position: absolute;
+  width: 30px;
+  height: 26px;
+  background: $orange;
+  left: 5px;
+  bottom: 5px;
+}
+
+.circleContainer {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 1px solid $text-actions;
+  border-radius: 50%;
+  background: $white;
+  margin-bottom: 2px;
+}
+
+.circleConten {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid $text-actions;
+  border-radius: 50%;
+  background: $white;
+  left: 12px;
+  bottom: -1px;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

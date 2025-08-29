@@ -1,0 +1,41 @@
+@use "../../styles/global" as *;
+
+.recentContainer {
+  height: 42px;
+  width: 100%;
+  background: var(--primary-card);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+}
+
+.iconTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 5px 12px;
+}
+
+.iconTitleContainer h4 {
+  margin: 0px;
+  color: var(--primary-text);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.recentContainer p {
+  color: var(--second-text);
+  font-size: 12px;
+}
+
+.threeDots {
+  padding: 5px 12px;
+  color: var(--primary-icon);
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: end;
+}
