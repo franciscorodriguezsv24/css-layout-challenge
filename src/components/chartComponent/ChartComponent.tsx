@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import drawChart from "./DrawChart";
-import styles from "./chartComponent.module.scss";
+import styles from "./chartcomponent.module.scss";
 
 type DataItems = {
   name: string;
